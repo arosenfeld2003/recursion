@@ -1,5 +1,3 @@
-// It should have a  place to store todos.
-
 var helpers = {
   store: function(listname, data) {
     if (arguments.length > 1) {
@@ -150,7 +148,7 @@ var App = {
     var editBox = document.createElement('input');
     editBox.className = 'edit-box';
     editBox.style.opacity = 0;
-    editBox.placeholder = 'Update Your Fucking Stuff'; 
+    editBox.placeholder = 'Update Your Shit'; 
     // create an element to be clicked for nested recursive addition.
     var recursion = document.createElement('span');
     recursion.id = 'top';
@@ -171,6 +169,7 @@ var App = {
       } else {
         // create a ul node and append to the parentLi.
         var nestedUl = document.createElement('ul');
+        nestedUl.className = 'nested';
         nestedUl.classList.add(parentLi.id);
         parentLi.appendChild(nestedUl);
         return nestedUl;
@@ -266,7 +265,7 @@ var App = {
       label.style.textDecoration = '';
     }
 
-    var isChecked = checkbox.checked; // 11/9: Checkbox functionality is buggy...
+    var isChecked = checkbox.checked; //
 
     // add 'line-through' to the toggled todo and all nested todos.
       // method should be called on every li element, including those on deeper nested ul's.
@@ -368,8 +367,9 @@ var App = {
     }
     nestedInput.id = 'nested';
     nestedInput.className = parentLi.id;
-    nestedInput.placeholder = 'Build a Fucking Nest'
+    nestedInput.placeholder = 'Build Your Nest'
     parentLi.appendChild(nestedInput);
+    document.getElementById('nested').focus();
   },
   getParentTodolistArray: function(todo) {
     // return the parent todoList array of any todo on a todoList object.
